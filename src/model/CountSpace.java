@@ -4,6 +4,7 @@ import org.apache.hadoop.hive.ql.exec.UDF;
 
 @SuppressWarnings("deprecation")
 public class CountSpace extends UDF {
+	private final static char OCCURANCE = ' ';
 	/**
 	 * count the number of ' ' in the given airportName.
 	 * @param airportName
@@ -16,7 +17,7 @@ public class CountSpace extends UDF {
 		int count = 0;
 		StringBuilder result = new StringBuilder();
 		for (int i = 0; i < airportName.length(); i++) {
-			if (airportName.charAt(i) == ' ') {
+			if (airportName.charAt(i) == OCCURANCE) {
 				count++;
 				result.append(count);
 			} else {
